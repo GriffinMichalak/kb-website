@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './Dropdown.scss'
 
 type DropdownProps = {
