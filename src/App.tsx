@@ -17,9 +17,8 @@ function App() {
           <h1 className="profile__name">Kelly Broder</h1>
           <p className="profile__role">Reporter, The Boston Globe</p>
           <p className="profile__bio">
-            Kelly Broder is a criminal justice reporter for the Boston Globe. She
-            previously worked for the Associated Press, The Baltimore Sun, The
-            Advocate | Times-Picayune and other newspapers.
+          To be informed is to be empowered! I seek to give voice to the silenced, question systems in place and practice empathetic and objective reporting to serve the communities around me. 
+          I just finished my co-op working for Boston Globe Magazine and the Globe's food, travel and address sections. I was responsible for fact-checking stories, curating the weekend newsletter, pitching and writing features and managing the Magazine's presence on social media.
           </p>
           <div className="profile__socials">
             <a href="https://www.bostonglobe.com/about/staff-list/correspondent/kelly-broder/" target='_blank' aria-label="Website" className="social-icon">
