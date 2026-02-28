@@ -199,6 +199,17 @@ html {
     margin-top: 0.5rem;
     padding: 5px 16px 16px 16px;
   }
+
+  &__link {
+    color: $fg;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    color: $fg-light;
+    text-decoration: none;
+    transition: .15s ease-in-out;
+  }
 }
 
 // ── Responsive ──

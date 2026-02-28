@@ -1,35 +1,6 @@
 import './App.scss'
 import Article from './Article'
-
-const articles = [
-  {
-    image: 'https://picsum.photos/seed/story1/400/280',
-    publication: 'Boston Globe',
-    date: '12/19/2025',
-    headline:
-      'Brown campus shooter harbored resentment as a PhD student in the early 2000s',
-    excerpt:
-      'Growing up in Portugal, Claudio Manuel Neves Valente stood out for his intellectual potential. In high school, he traveled to national and international physics competitions. He later graduated from Portugal\u2019s top university for science and engineering.',
-  },
-  {
-    image: 'https://picsum.photos/seed/story2/400/280',
-    publication: 'Boston Globe',
-    date: '10/23/2025',
-    headline:
-      'Mother and former nurse killed in shooting amid mental illness and life on the streets',
-    excerpt:
-      'As a teenager in the early 1980s, Marie Molea was captain of the cheerleading team and homecoming queen at Lynn Classical High School. But everything changed when she started experiencing bouts of paranoia, leaving her family perplexed and concerned.',
-  },
-  {
-    image: 'https://picsum.photos/seed/story3/400/280',
-    publication: 'AP News',
-    date: '09/10/2025',
-    headline:
-      'She was adopted into an abusive US home. Decades later, ICE deported her',
-    excerpt:
-      'It sounded like freedom, like a world of possibility beyond the orphanage walls. Maria Pires was getting adopted. At 11 years old, she saw herself escaping the chaos and violence of the Sao Paulo orphanage, where she\u2019d been sexually assaulted by a staff member.',
-  },
-]
+import { articles } from './articles'
 
 function App() {
   return (
@@ -82,6 +53,7 @@ function App() {
           {articles.map((article) => (
             <Article 
               image={article.image} 
+              link={article.link}
               headline={article.headline} 
               publication={article.publication} 
               excerpt={article.excerpt} 

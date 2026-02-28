@@ -2,13 +2,14 @@ import './App.scss'
 
 type ArticleProps = {
     image: string;
+    link: string;
     headline: string;
     publication: string;
     excerpt: string;
     date: string;
 };
 
-const Article = ({ image, headline, publication, excerpt, date }: ArticleProps) => {
+const Article = ({ image, link, headline, publication, excerpt, date }: ArticleProps) => {
     return (
         <article className="card">
             <div className="card__image">
@@ -21,7 +22,9 @@ const Article = ({ image, headline, publication, excerpt, date }: ArticleProps) 
             <div className="card__line">
                 <hr />
             </div>
-            <h2 className="card__headline">{headline}</h2>
+            <a href={link} target="_blank" className="card__link">
+                <h2 className="card__headline">{headline}</h2>
+            </a>
             <p className="card__excerpt">{excerpt}</p>
         </article>
     );
