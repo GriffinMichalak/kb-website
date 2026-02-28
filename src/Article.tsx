@@ -13,7 +13,9 @@ const Article = ({ image, link, headline, publication, excerpt, date }: ArticleP
     return (
         <article className="card">
             <div className="card__image">
-                <img src={image} alt={headline} />
+                <a href={link} target="_blank" className="card__link">
+                    <img src={image} alt={headline} />
+                </a>
             </div>
             <div className="card__meta">
                 <span className="card__publication">{publication}</span>
