@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import '../App.scss'
-import Article from '../Article';
-import { NativeDropdown } from '../Dropdown';
+import Article from '../Components/Article';
+import { NativeDropdown } from '../Components/Dropdown';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 

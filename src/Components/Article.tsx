@@ -1,4 +1,4 @@
-import './App.scss'
+import '../App.scss'
 
 type ArticleProps = {
     image: string;
