@@ -1,30 +1,34 @@
 import { useState } from 'react';
 import './App.scss'
-import Article from './Article'
 import { articles } from './articles'
-import { NativeDropdown } from './Dropdown'
+import { PortfolioTab } from './Tabs/PortfolioTab';
+import { ResumeTab } from './Tabs/ResumeTab';
 
 function App() {
   const [publication, setPublication] = useState('');
   // Get unique publications for dropdown options
   const options = Array.from(new Set(articles.map(article => article.publication))).filter(Boolean);
+  const [activeTab, setActiveTab] = useState('Portfolio');
+  const tabNames = ['Portfolio', 'Resume']
 
   return (
     <div className="site">
       <header className="profile">
         <div className="profile__photo">
           <img
-            // src="./assets/kelly-broder-pfp.jpg"
+            // src="./assets/kelly-broder-pfp.png"
             src="https://media.licdn.com/dms/image/v2/D4E03AQHSIwCquUDelQ/profile-displayphoto-shrink_800_800/B4EZbXOA5fGcAc-/0/1747367499342?e=1773273600&v=beta&t=u0RyfPBTJKDawc7hNltSIFdfpSkU8L5xSDHIdRu8utQ"
             alt="Profile"
           />
         </div>
         <div className="profile__info">
           <h1 className="profile__name">Kelly Broder</h1>
-          <p className="profile__role">Reporter, The Boston Globe</p>
+          {/* <p className="profile__role">Reporter, The Boston Globe</p> */}
           <p className="profile__bio">
-          To be informed is to be empowered! I seek to give voice to the silenced, question systems in place and practice empathetic and objective reporting to serve the communities around me. 
-          I just finished my co-op working for Boston Globe Magazine and the Globe's food, travel and address sections. I was responsible for fact-checking stories, curating the weekend newsletter, pitching and writing features and managing the Magazine's presence on social media.
+          To be informed is to be empowered! I seek to give voice to the silenced, question systems in place and practice empathetic and objective reporting to serve the communities around me. I study journalism and women's, gender and sexuality studies at Boston University and will graduate in May 2027.
+          </p>
+          <p className="profile__bio">
+          My work has appeared in The Boston Globe, NBC10 Boston, the Dorchester Reporter, the Enterprise papers on Cape Cod, and in other publications around New England.
           </p>
           <div className="profile__socials">
             {/* <a href="https://www.bostonglobe.com/about/staff-list/correspondent/kelly-broder/" target='_blank' aria-label="Website" className="social-icon">
@@ -54,46 +58,17 @@ function App() {
 
       <section className="portfolio">
         <div className="portfolio__tabs">
-          <button className="portfolio__tab portfolio__tab--active">
-            Portfolio
-          </button>
+          {tabNames.map((tabName) => (
+            <button onClick={() => setActiveTab(tabName)} key={tabName} className={`portfolio__tab ${activeTab==tabName ? 'portfolio__tab--active' : ''}`}>
+              {tabName}
+            </button>
+          ))}
         </div>
 
-        <NativeDropdown publication={publication} setPublication={setPublication} options={options}/>
+        {activeTab == 'Portfolio' ? <PortfolioTab articles={articles} publication={publication} setPublication={setPublication} options={options} /> : null}
+        {activeTab == 'Resume' ? <ResumeTab />: null}
 
-        <div className="portfolio__grid">
-          {articles
-            .slice()
-            .sort((a, b) => {
-              const dateA = Date.parse(a.date) || new Date(a.date).getTime() || 0;
-              const dateB = Date.parse(b.date) || new Date(b.date).getTime() || 0;
-              return dateB - dateA;
-            })
-            .filter((a) => {
-              const pub = a.publication;
-              if (!publication) {
-                return pub;
-              }
-              if (pub == publication) {
-                return pub;
-              }
-            })
-            .map((article) => (
-              <Article 
-                key={article.link || article.headline} 
-                image={article.image} 
-                link={article.link}
-                headline={article.headline} 
-                publication={article.publication} 
-                excerpt={article.excerpt} 
-                date={article.date} 
-              />
-            ))}
-        </div>
       </section>
-
-      {/* <iframe width="100%" height="1000px" src="https://docs.google.com/document/d/1hfgNl0tjypAVdCTxigYtdh5oELRoM4a-3UdQwqhwVMM/edit?tab=t.0"></iframe> */}
-
     </div>
   )
 }
