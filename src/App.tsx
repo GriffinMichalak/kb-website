@@ -3,6 +3,7 @@ import './App.scss'
 import { articles } from './articles'
 import { PortfolioTab } from './Tabs/PortfolioTab';
 import { ResumeTab } from './Tabs/ResumeTab';
+import pfp from '../assets/kelly-broder-pfp.png'
 
 function App() {
   const [publication, setPublication] = useState('');
@@ -16,7 +17,7 @@ function App() {
       <header className="profile">
         <div className="profile__photo">
           <img
-            src="./assets/kelly-broder-pfp.png"
+            src={pfp}
             // src="https://media.licdn.com/dms/image/v2/D4E03AQHSIwCquUDelQ/profile-displayphoto-shrink_800_800/B4EZbXOA5fGcAc-/0/1747367499342?e=1773273600&v=beta&t=u0RyfPBTJKDawc7hNltSIFdfpSkU8L5xSDHIdRu8utQ"
             alt="Profile"
           />
