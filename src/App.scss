@@ -105,7 +105,10 @@ html {
   margin-top: 2.5rem;
 
   &__tabs {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: $bg;
     border-bottom: 1px solid $border;
     margin-bottom: 2rem;
   }
