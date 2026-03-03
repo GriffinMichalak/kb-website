@@ -8,7 +8,6 @@ export const Header = () => {
     <div className="profile__photo">
       <img
         src={pfp}
-        // src="https://media.licdn.com/dms/image/v2/D4E03AQHSIwCquUDelQ/profile-displayphoto-shrink_800_800/B4EZbXOA5fGcAc-/0/1747367499342?e=1773273600&v=beta&t=u0RyfPBTJKDawc7hNltSIFdfpSkU8L5xSDHIdRu8utQ"
         alt="Profile"
       />
     </div>
@@ -16,21 +15,16 @@ export const Header = () => {
       <h1 className="profile__name">Kelly Broder</h1>
       {/* <p className="profile__role">Reporter, The Boston Globe</p> */}
       <p className="profile__bio">
-      To be informed is to be empowered! I seek to give voice to the silenced, question systems in place and practice empathetic and objective reporting to serve the communities around me. I study journalism and women's, gender and sexuality studies at Boston University and will graduate in May 2027 with a Bachelor of Science. 
+        To be informed is to be empowered! I seek to give voice to the silenced, question systems in place and practice empathetic and objective reporting to serve the communities around me. I study journalism and women's, gender and sexuality studies at Boston University and will graduate in May 2027 with a Bachelor of Science. 
       </p>
       <p className="profile__bio">
-      My work has appeared in The Boston Globe, NBC10 Boston, the Dorchester Reporter, the Enterprise papers on Cape Cod, and in other publications around New England.
+        My work has appeared in The Boston Globe, NBC10 Boston, the Dorchester Reporter, the Enterprise papers on Cape Cod, and in other publications around New England.
       </p>
       <div className="profile__socials">
         {/* <a href="https://www.bostonglobe.com/about/staff-list/correspondent/kelly-broder/" target='_blank' aria-label="Website" className="social-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-          </svg>
-        </a> */}
-        {/* <a href="#" aria-label="Twitter" className="social-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.38 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.32 3.91A12.16 12.16 0 0 1 3 4.79a4.28 4.28 0 0 0 1.32 5.72 4.24 4.24 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.43 4.2 4.27 4.27 0 0 1-1.93.07 4.29 4.29 0 0 0 4 2.97A8.59 8.59 0 0 1 2 19.54a12.13 12.13 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.37-.01-.56A8.72 8.72 0 0 0 23 6.29a8.49 8.49 0 0 1-2.54.7z" />
           </svg>
         </a> */}
         <a href="https://www.linkedin.com/in/kelly-broder-28110622b" target='_blank' aria-label="LinkedIn" className="social-icon">
