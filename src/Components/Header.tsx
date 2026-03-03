@@ -16,7 +16,7 @@ export const Header = () => {
       <h1 className="profile__name">Kelly Broder</h1>
       {/* <p className="profile__role">Reporter, The Boston Globe</p> */}
       <p className="profile__bio">
-      To be informed is to be empowered! I seek to give voice to the silenced, question systems in place and practice empathetic and objective reporting to serve the communities around me. I study journalism and women's, gender and sexuality studies at Boston University and will graduate in May 2027.
+      To be informed is to be empowered! I seek to give voice to the silenced, question systems in place and practice empathetic and objective reporting to serve the communities around me. I study journalism and women's, gender and sexuality studies at Boston University and will graduate in May 2027 with a Bachelor of Science. 
       </p>
       <p className="profile__bio">
       My work has appeared in The Boston Globe, NBC10 Boston, the Dorchester Reporter, the Enterprise papers on Cape Cod, and in other publications around New England.
