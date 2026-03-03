@@ -1,7 +1,8 @@
-import '../App.scss'
+import '../App.scss';
 
 export const ResumeTab = () => {
-  const RESUME_LINK = "https://docs.google.com/document/d/1veqBOO1-B9lLvew1TsQuRyw945VmSq5NrqaVjl1BZ9Q/edit?tab=t.0embedded=true";
+  const RESUME_LINK =
+    'https://docs.google.com/document/d/1veqBOO1-B9lLvew1TsQuRyw945VmSq5NrqaVjl1BZ9Q/edit?tab=t.0embedded=true';
 
   return (
     <iframe
@@ -12,4 +13,4 @@ export const ResumeTab = () => {
       title="Google Doc"
     ></iframe>
   );
-}
+};

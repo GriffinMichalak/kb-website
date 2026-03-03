@@ -2,3 +2,5 @@
 
 kellybroder.vercel.app
 https://vercel.com/griffinmichalaks-projects/kellybroder/settings/domains 
+
+`npx prettier --write src/`

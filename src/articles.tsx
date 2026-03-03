@@ -1,11 +1,12 @@
-const GOOGLE_SHEETS_LINK = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS6I1yVkwThxpRAMRBrdvl0Tmz6lBInVB-QzxEl5DsGoqUH-Y7i5nW78UiJWJFHNZPvW5WxWFfY7NtC/pub?gid=0&single=true&output=tsv';
+const GOOGLE_SHEETS_LINK =
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vS6I1yVkwThxpRAMRBrdvl0Tmz6lBInVB-QzxEl5DsGoqUH-Y7i5nW78UiJWJFHNZPvW5WxWFfY7NtC/pub?gid=0&single=true&output=tsv';
 
 export const articles = await fetch(GOOGLE_SHEETS_LINK)
-  .then(res => res.text())
-  .then(csv => {
+  .then((res) => res.text())
+  .then((csv) => {
     const [headerLine, ...lines] = csv.trim().split('\n');
     const headers = headerLine.split('\t');
-    return lines.map(line => {
+    return lines.map((line) => {
       const values = line.split('\t');
       const obj: Record<string, string> = {};
 
