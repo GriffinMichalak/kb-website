@@ -3,8 +3,7 @@ $fg-muted: #555;
 $fg-light: #888;
 $bg: #fdfdfd;
 $border: #e0e0e0;
-$font:
-  'Inter',
+$font: 'Inter',
   -apple-system,
   BlinkMacSystemFont,
   'Segoe UI',
@@ -158,6 +157,7 @@ html {
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -203,6 +203,7 @@ html {
 
   &__line {
     padding: 5px 16px 5px 16px;
+
     hr {
       border: none;
       height: 1px;

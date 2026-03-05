@@ -63,6 +63,7 @@ function App() {
             />
           ) : null}
           {activeTab == 'Resume' ? <ResumeTab /> : null}
+          {/* {activeTab == 'Photos' ? <PhotosTab /> : null} */}
         </div>
       </section>
     </div>
