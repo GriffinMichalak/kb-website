@@ -4,6 +4,9 @@ import { articles } from './articles';
 import { PortfolioTab } from './Tabs/PortfolioTab';
 import { ResumeTab } from './Tabs/ResumeTab';
 import { Header } from './Components/Header';
+import { PhotosTab } from './Tabs/PhotosTab';
+
+const FF_PHOTOS_TAB: boolean = false;
 
 function App() {
   const [publication, setPublication] = useState('');
@@ -12,6 +15,10 @@ function App() {
   );
   const [activeTab, setActiveTab] = useState('Portfolio');
   const tabNames = ['Portfolio', 'Resume'];
+
+  if (FF_PHOTOS_TAB) {
+    tabNames.push('Photos');
+  }
 
   const tabsRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
@@ -63,7 +70,7 @@ function App() {
             />
           ) : null}
           {activeTab == 'Resume' ? <ResumeTab /> : null}
-          {/* {activeTab == 'Photos' ? <PhotosTab /> : null} */}
+          {activeTab == 'Photos' && FF_PHOTOS_TAB ? <PhotosTab /> : null}
         </div>
       </section>
     </div>
