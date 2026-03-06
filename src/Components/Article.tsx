@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import '../App.scss';
+import Loader from './Loader';
 
 type ArticleProps = {
   image: string;
@@ -11,33 +11,13 @@ type ArticleProps = {
 };
 
 const Article = ({ image, link, headline, publication, excerpt, date }: ArticleProps) => {
-  const [loaded, setLoaded] = useState(false);
-
   return (
     <article className="card">
       <div className="card__image">
         <a href={link} target="_blank" className="card__link">
-          {!loaded && (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100%',
-                width: '100%',
-                minHeight: '150px'
-              }}
-            >
-              Loading...
-            </div>
-          )}
-          <img
-            src={image}
-            alt={headline}
-            style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.3s' }}
-            onLoad={() => setLoaded(true)}
-            loading="lazy"
-          />
+          <Loader>
+            <img src={image} alt={headline} loading="lazy" />
+          </Loader>
         </a>
       </div>
       <div className="card__meta">

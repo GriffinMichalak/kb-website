@@ -2,32 +2,34 @@ import { useState } from 'react';
 import '../App.scss';
 
 type LoaderProps = {
-  children: React.ReactNode; // the element to render/load
-  minHeight?: string | number; // optionally customize the minHeight of the loader
+  children: React.ReactNode;
+  text?: string;
+  align?: 'top' | 'center';
 };
 
-const Loader = ({ children }: LoaderProps) => {
+const Loader = ({ children, text, align }: LoaderProps) => {
   const [loaded, setLoaded] = useState(false);
 
+  const loaderStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: align === 'top' ? 'flex-start' : 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    inset: 0,
+    minHeight: '150px'
+  };
+
   return (
-    <div>
-      {!loaded && (
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100%',
-            width: '100%',
-            minHeight: '150px'
-          }}
-        >
-          Loading...
-        </div>
-      )}
+    <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+      {!loaded && <div style={loaderStyle}>{text ? text : 'Loading...'}</div>}
       <div
         onLoad={() => setLoaded(true)}
-        style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.3s' }}
+        style={{
+          width: '100%',
+          height: '100%',
+          opacity: loaded ? 1 : 0,
+          transition: 'opacity 0.3s'
+        }}
       >
         {children}
       </div>
