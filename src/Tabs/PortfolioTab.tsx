@@ -5,6 +5,8 @@ import { NativeDropdown } from '../Components/Dropdown';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
+const ARTICLES_PER_PAGE = 21;
+
 type PortfolioTabProps = {
   articles: any;
   publication: string;
@@ -18,7 +20,6 @@ export const PortfolioTab = ({
   setPublication,
   options
 }: PortfolioTabProps) => {
-  const ARTICLES_PER_PAGE = 21;
   const [page, setPage] = useState(1);
 
   useEffect(() => {
