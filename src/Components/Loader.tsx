@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import '../App.scss';
 
-export const ResumeTab = () => {
-  const RESUME_LINK =
-    'https://docs.google.com/document/d/1veqBOO1-B9lLvew1TsQuRyw945VmSq5NrqaVjl1BZ9Q/edit?tab=t.0embedded=true';
+type LoaderProps = {
+  children: React.ReactNode; // the element to render/load
+  minHeight?: string | number; // optionally customize the minHeight of the loader
+};
 
+const Loader = ({ children }: LoaderProps) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -20,17 +22,17 @@ export const ResumeTab = () => {
             minHeight: '150px'
           }}
         >
-          Loading Resume...
+          Loading...
         </div>
       )}
-      <iframe
-        src={RESUME_LINK}
-        width="100%"
-        height="500px"
-        style={{ border: 'none', opacity: loaded ? 1 : 0, transition: 'opacity 0.3s' }}
-        title="Google Doc"
+      <div
         onLoad={() => setLoaded(true)}
-      ></iframe>
+        style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.3s' }}
+      >
+        {children}
+      </div>
     </div>
   );
 };
+
+export default Loader;
