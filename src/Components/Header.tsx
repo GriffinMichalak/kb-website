@@ -12,7 +12,7 @@ export const Header = () => {
   const [isCopied, setIsCopied] = useState(false);
   const COPY_TIMEOUT = 3000;
 
-  const handleClose = (event: React.SyntheticEvent | Event, reason?: SnackbarCloseReason) => {
+  const handleClose = (_event: React.SyntheticEvent | Event, reason?: SnackbarCloseReason) => {
     if (reason === 'clickaway') return;
     setSnackbarOpen(false);
     setIsCopied(false);
