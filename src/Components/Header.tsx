@@ -1,9 +1,52 @@
 import '../App.scss';
 import pfp from '../../assets/kelly-broder-pfp.png';
+import { useState } from 'react';
+import Snackbar, { type SnackbarCloseReason } from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+
+import React from 'react';
 
 export const Header = () => {
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+  const COPY_TIMEOUT = 3000;
+
+  const handleClose = (event: React.SyntheticEvent | Event, reason?: SnackbarCloseReason) => {
+    if (reason === 'clickaway') return;
+    setSnackbarOpen(false);
+    setIsCopied(false);
+  };
+
+  const action = (
+    <React.Fragment>
+      <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
+  const handleCopyEmail = () => {
+    const emailText = 'kellybroder8@gmail.com';
+    try {
+      navigator.clipboard.writeText(emailText);
+      setIsCopied(true);
+      setSnackbarOpen(true);
+      setTimeout(() => setIsCopied(false), COPY_TIMEOUT);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
+
   return (
     <header className="profile">
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={COPY_TIMEOUT}
+        onClose={handleClose}
+        message="Email copied to clipboard"
+        action={action}
+      />
       <div className="profile__photo">
         <img src={pfp} alt="Profile" />
       </div>
@@ -48,13 +91,19 @@ export const Header = () => {
             </svg>
           </a>
           <a
-            href="mailto:kellybroder8@gmail.com"
-            target="_blank"
+            // href="mailto:kellybroder8@gmail.com"
+            // target="_blank"
             aria-label="Email"
             className="social-icon"
+            onClick={() => handleCopyEmail()}
+            style={{ cursor: 'pointer' }}
           >
             <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              {!isCopied ? (
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              ) : (
+                <path d="M9 16.17l-3.88-3.88a1 1 0 1 1 1.41-1.41L9 13.34l7.47-7.47a1 1 0 1 1 1.41 1.41L9 16.17z" />
+              )}
             </svg>
           </a>
         </div>
