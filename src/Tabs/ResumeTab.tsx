@@ -13,11 +13,11 @@ export const ResumeTab = () => {
         {/* <h2 className="resume-header">Résumé</h2>
         <p className="subtitle">Journalism · Reporting · Multimedia</p> */}
 
-        <div className="view-full-resume">
+        {/* <div className="view-full-resume">
           <a href={RESUME_LINK} target="_blank" className="fade-hover">
             View Full Resume
           </a>
-        </div>
+        </div> */}
 
         <div className="category">
           <div className="category-label">Education</div>
