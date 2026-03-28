@@ -1,6 +1,7 @@
 export const experiences = [
   {
     company: 'Dorchester Reporter',
+    companyImage: '../../assets/dotnews.jpeg',
     role: 'General Assignment Reporter',
     location: 'Boston, Mass.',
     date: 'Jan. 2026 - Present',
@@ -10,6 +11,7 @@ export const experiences = [
   },
   {
     company: 'The Boston Globe',
+    companyImage: '../../assets/globe.png',
     role: 'Editorial Assistant',
     location: 'Boston, Mass.',
     date: 'July - Dec. 2025',
@@ -22,6 +24,7 @@ export const experiences = [
   },
   {
     company: 'Falmouth Publishing, Inc.—The Enterprise',
+    companyImage: '../../assets/enterprise.jpg',
     role: 'Reporter Intern',
     location: 'Cape Cod, Mass.',
     date: 'June - Sept. 2022, May - Aug. 2024',
@@ -32,6 +35,7 @@ export const experiences = [
   },
   {
     company: "Boston University's The Daily Free Press",
+    companyImage: '../../assets/dfp.png',
     role: 'Campus Reporter',
     location: 'Boston, Mass.',
     date: 'Oct. 2023 - May 2025',
@@ -43,19 +47,18 @@ export const experiences = [
   {
     company: 'Society of Professional Journalists Northeast Summer Institute',
     role: 'Writing and Video Editing Mentor',
+    companyImage: '../../assets/spj.jpeg',
     location: 'Bristol, R.I. & Boston, Mass.',
     date: 'July 2021 - July 2024',
     bullets: [
       'Mentored 25 student journalists in interviewing, research, writing, and editing multimedia news packages',
       'Core contributor to summer program structure, participated in three professional development workshops'
     ]
-  }
-];
-
-export const otherMediaExperience = [
+  },
   {
     company: 'Boston University College of Arts and Sciences Communications',
     role: 'Newsletter Creator and Communications Assistant',
+    companyImage: '../../assets/bu_com.png',
     location: 'Boston, Mass.',
     date: 'Aug. 2023 - July 2025',
     bullets: [
@@ -66,6 +69,7 @@ export const otherMediaExperience = [
   },
   {
     company: 'Boston University Department of Journalism Administration',
+    companyImage: '../../assets/bu_com.png',
     role: 'Video and Communications Assistant',
     location: 'Boston, Mass.',
     date: 'Jan. 2025 - Present',

@@ -12,7 +12,9 @@ interface RewardCardProps {
 export const ExperienceCard = ({ company, role, location, date, bullets }: RewardCardProps) => {
   return (
     <div className="resume-card">
-      <div className="date">{date} | {location}</div>
+      <div className="date">
+        {date} | {location}
+      </div>
       <h3>{role}</h3>
       <div className="org">{company}</div>
       {/* <div className="location">{location}</div> */}
