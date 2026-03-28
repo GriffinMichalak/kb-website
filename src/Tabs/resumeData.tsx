@@ -1,7 +1,14 @@
+import dotnews from '../../assets/dotnews.jpeg';
+import globe from '../../assets/globe.png';
+import enterprise from '../../assets/enterprise.jpg';
+import dfp from '../../assets/dfp.png';
+import spj from '../../assets/spj.jpeg';
+import buCom from '../../assets/bu_com.png';
+
 export const experiences = [
   {
     company: 'Dorchester Reporter',
-    companyImage: '../../assets/dotnews.jpeg',
+    companyImage: dotnews,
     role: 'General Assignment Reporter',
     location: 'Boston, Mass.',
     date: 'Jan. 2026 - Present',
@@ -11,7 +18,7 @@ export const experiences = [
   },
   {
     company: 'The Boston Globe',
-    companyImage: '../../assets/globe.png',
+    companyImage: globe,
     role: 'Editorial Assistant',
     location: 'Boston, Mass.',
     date: 'July - Dec. 2025',
@@ -24,7 +31,7 @@ export const experiences = [
   },
   {
     company: 'Falmouth Publishing, Inc.—The Enterprise',
-    companyImage: '../../assets/enterprise.jpg',
+    companyImage: enterprise,
     role: 'Reporter Intern',
     location: 'Cape Cod, Mass.',
     date: 'June - Sept. 2022, May - Aug. 2024',
@@ -35,7 +42,7 @@ export const experiences = [
   },
   {
     company: "Boston University's The Daily Free Press",
-    companyImage: '../../assets/dfp.png',
+    companyImage: dfp,
     role: 'Campus Reporter',
     location: 'Boston, Mass.',
     date: 'Oct. 2023 - May 2025',
@@ -47,7 +54,7 @@ export const experiences = [
   {
     company: 'Society of Professional Journalists Northeast Summer Institute',
     role: 'Writing and Video Editing Mentor',
-    companyImage: '../../assets/spj.jpeg',
+    companyImage: spj,
     location: 'Bristol, R.I. & Boston, Mass.',
     date: 'July 2021 - July 2024',
     bullets: [
@@ -58,7 +65,7 @@ export const experiences = [
   {
     company: 'Boston University College of Arts and Sciences Communications',
     role: 'Newsletter Creator and Communications Assistant',
-    companyImage: '../../assets/bu_com.png',
+    companyImage: buCom,
     location: 'Boston, Mass.',
     date: 'Aug. 2023 - July 2025',
     bullets: [
@@ -69,7 +76,7 @@ export const experiences = [
   },
   {
     company: 'Boston University Department of Journalism Administration',
-    companyImage: '../../assets/bu_com.png',
+    companyImage: buCom,
     role: 'Video and Communications Assistant',
     location: 'Boston, Mass.',
     date: 'Jan. 2025 - Present',

@@ -1,5 +1,6 @@
 import '../App.scss';
 import './ResumeTab.scss';
+import buLogo from '../../assets/bu.png';
 import { experiences } from './resumeData';
 import { ExperienceCard } from './ExperienceCard';
 
@@ -24,7 +25,7 @@ export const ResumeTab = () => {
             <div className="resume-card edu">
               <div style={{ display: 'flex' }}>
                 <div style={{ paddingTop: '1.438rem', paddingRight: '1.25rem' }}>
-                  <img width={'50px'} height={'50px'} src={'../../assets/bu.png'} alt="" />
+                  <img width={'50px'} height={'50px'} src={buLogo} alt="" />
                 </div>
                 <div>
                   <div className="date">Aug. 2023 - May 2027</div>
