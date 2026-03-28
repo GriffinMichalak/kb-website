@@ -1,6 +1,6 @@
 import '../App.scss';
 import './ResumeTab.scss';
-import { experiences, otherMediaExperience } from './resumeData';
+import { experiences } from './resumeData';
 import { ExperienceCard } from './ExperienceCard';
 
 export const ResumeTab = () => {
@@ -22,10 +22,17 @@ export const ResumeTab = () => {
           <div className="category-label">Education</div>
           <div className="resume-card-grid">
             <div className="resume-card edu">
-              <div className="date">Aug. 2023 - May 2027</div>
-              <h3>Boston University</h3>
-              <div className="org">B.S. in Journalism</div>
-              <p>GPA: 3.8 | College of Communication, Kilachand Honors College</p>
+              <div style={{ display: 'flex' }}>
+                <div style={{ paddingTop: '1.438rem', paddingRight: '1.25rem' }}>
+                  <img width={'50px'} height={'50px'} src={'../../assets/bu.png'} alt="" />
+                </div>
+                <div>
+                  <div className="date">Aug. 2023 - May 2027</div>
+                  <h3>Boston University</h3>
+                  <div className="org">B.S. in Journalism</div>
+                  <p>GPA: 3.8 | College of Communication, Kilachand Honors College</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -37,6 +44,7 @@ export const ResumeTab = () => {
               <ExperienceCard
                 key={idx}
                 company={e.company}
+                companyImage={e.companyImage}
                 role={e.role}
                 location={e.location}
                 date={e.date}
@@ -44,22 +52,6 @@ export const ResumeTab = () => {
               />
             ))}
           </div>
-        </div>
-        {/* ========== OTHER MEDIA EXPERIENCE ========== */}
-      </div>
-      <div className="category">
-        <div className="category-label">Other Media Experience</div>
-        <div className="resume-card-grid">
-          {otherMediaExperience.map((e, idx) => (
-            <ExperienceCard
-              key={idx}
-              company={e.company}
-              role={e.role}
-              location={e.location}
-              date={e.date}
-              bullets={e.bullets}
-            />
-          ))}
         </div>
       </div>
     </div>
