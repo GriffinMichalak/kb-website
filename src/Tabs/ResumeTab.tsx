@@ -3,6 +3,7 @@ import './ResumeTab.scss';
 import buLogo from '../../assets/bu.png';
 import { experiences } from './resumeData';
 import { ExperienceCard } from './ExperienceCard';
+import { useIsMobile } from '../hooks/useIsMobile'
 
 export const ResumeTab = () => {
   // const RESUME_LINK = 'https://docs.google.com/document/d/1veqBOO1-B9lLvew1TsQuRyw945VmSq5NrqaVjl1BZ9Q/edit?tab=t.0embedded=true';
@@ -24,9 +25,11 @@ export const ResumeTab = () => {
           <div className="resume-card-grid">
             <div className="resume-card edu">
               <div style={{ display: 'flex' }}>
-                <div style={{ paddingTop: '1.438rem', paddingRight: '1.25rem' }}>
-                  <img width={'50px'} height={'50px'} src={buLogo} alt="" />
-                </div>
+                {!useIsMobile() &&
+                  <div style={{ paddingTop: '1.438rem', paddingRight: '1.25rem' }}>
+                    <img width={'50px'} height={'50px'} src={buLogo} alt="" />
+                  </div>
+                }
                 <div>
                   <div className="date">Aug. 2023 - May 2027</div>
                   <h3>Boston University</h3>

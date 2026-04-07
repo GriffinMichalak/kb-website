@@ -1,5 +1,6 @@
 import '../App.scss';
 import './ResumeTab.scss';
+import { useIsMobile } from '../hooks/useIsMobile'
 
 interface ExperienceCardProps {
   company: string;
@@ -21,9 +22,11 @@ export const ExperienceCard = ({
   return (
     <div className="resume-card edu">
       <div style={{ display: 'flex' }}>
-        <div style={{ paddingTop: '1.438rem', paddingRight: '1.25rem' }}>
-          <img width={'50px'} height={'50px'} src={companyImage} alt="" />
-        </div>
+        {!useIsMobile() &&
+          <div style={{ paddingTop: '1.438rem', paddingRight: '1.25rem' }}>
+            <img width={'50px'} height={'50px'} src={companyImage} alt="" />
+          </div>
+        }
         <div>
           <div>
             <div className="date">
