@@ -7,11 +7,20 @@ import buCom from '../../assets/bu_com.png';
 
 export const experiences = [
   {
+    company: 'The Boston Globe',
+    companyImage: globe,
+    role: 'Audience Intern',
+    location: 'Boston, Mass.',
+    date: 'June - Aug. 2026',
+    bullets: [
+    ]
+  },
+  {
     company: 'Dorchester Reporter',
     companyImage: dotnews,
     role: 'General Assignment Reporter',
     location: 'Boston, Mass.',
-    date: 'Jan. 2026 - Present',
+    date: 'Jan. - May 2026',
     bullets: [
       'Cover breaking news and feature stories part-time through the BU Newsroom Initiative'
     ]
