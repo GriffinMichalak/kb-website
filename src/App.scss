@@ -105,6 +105,55 @@ html {
   }
 }
 
+.scroll-to-top {
+  position: fixed;
+  right: max(1.5rem, calc((100vw - 960px) / 2));
+  bottom: 1.5rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: $fg;
+  color: $bg;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba($fg, 0.3);
+    outline-offset: 3px;
+  }
+}
+
 // ── Portfolio section ──
 
 .portfolio {
@@ -255,6 +304,11 @@ html {
 // ── Responsive ──
 
 @media (max-width: 720px) {
+  .scroll-to-top {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
   .profile {
     flex-direction: column;
     align-items: center;
@@ -296,5 +350,11 @@ html {
 @media (max-width: 960px) and (min-width: 721px) {
   .portfolio__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top {
+    transition: none;
   }
 }
