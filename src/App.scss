@@ -269,6 +269,25 @@ html {
     }
   }
 
+  .portfolio {
+    &__tabs {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__tab {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+  }
+
   .portfolio__grid {
     grid-template-columns: 1fr;
   }
