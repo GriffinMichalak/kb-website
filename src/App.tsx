@@ -5,6 +5,7 @@ import { PortfolioTab } from './Tabs/PortfolioTab';
 import { ResumeTab } from './Tabs/ResumeTab';
 import { Header } from './Components/Header';
 import { PhotosTab } from './Tabs/PhotosTab';
+// import { SocialStrategyTab } from './Tabs/SocialStrategyTab';
 
 const FF_PHOTOS_TAB: boolean = false;
 
@@ -13,8 +14,8 @@ function App() {
   const options = Array.from(new Set(articles.map((article) => article.publication))).filter(
     Boolean
   );
-  const [activeTab, setActiveTab] = useState('Portfolio');
-  const tabNames = ['Portfolio', 'Resume'];
+  const [activeTab, setActiveTab] = useState('Clip Portfolio');
+  const tabNames = ['Clip Portfolio', 'Resume'];
 
   if (FF_PHOTOS_TAB) {
     tabNames.push('Photos');
@@ -61,7 +62,7 @@ function App() {
         </div>
 
         <div className="portfolio__content" key={activeTab}>
-          {activeTab == 'Portfolio' ? (
+          {activeTab == 'Clip Portfolio' ? (
             <PortfolioTab
               articles={articles}
               publication={publication}
@@ -71,6 +72,7 @@ function App() {
           ) : null}
           {activeTab == 'Resume' ? <ResumeTab /> : null}
           {activeTab == 'Photos' && FF_PHOTOS_TAB ? <PhotosTab /> : null}
+          {/* {activeTab == 'Social Strategy' ? <SocialStrategyTab /> : null} */}
         </div>
       </section>
     </div>
