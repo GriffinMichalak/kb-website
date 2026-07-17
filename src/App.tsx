@@ -8,9 +8,11 @@ import { PhotosTab } from './Tabs/PhotosTab';
 // import { SocialStrategyTab } from './Tabs/SocialStrategyTab';
 
 const FF_PHOTOS_TAB: boolean = false;
+const FF_SCROLL_TOP_BTN: boolean = true;
 
 function App() {
   const [publication, setPublication] = useState('');
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
   const options = Array.from(new Set(articles.map((article) => article.publication))).filter(
     Boolean
   );
@@ -42,6 +44,16 @@ function App() {
     window.addEventListener('resize', updateIndicator);
     return () => window.removeEventListener('resize', updateIndicator);
   }, [updateIndicator]);
+
+  useEffect(() => {
+    if (!FF_SCROLL_TOP_BTN) return;
+
+    const updateScrollButton = () => setShowScrollToTop(window.scrollY > 300);
+
+    updateScrollButton();
+    window.addEventListener('scroll', updateScrollButton, { passive: true });
+    return () => window.removeEventListener('scroll', updateScrollButton);
+  }, []);
 
   return (
     <div className="site">
@@ -75,6 +87,28 @@ function App() {
           {/* {activeTab == 'Social Strategy' ? <SocialStrategyTab /> : null} */}
         </div>
       </section>
+
+      {FF_SCROLL_TOP_BTN ? (
+        <button
+          type="button"
+          className={`scroll-to-top ${showScrollToTop ? 'scroll-to-top--visible' : ''}`}
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+                ? 'auto'
+                : 'smooth',
+            })
+          }
+          aria-label="Scroll to top"
+          title="Scroll to top"
+          tabIndex={showScrollToTop ? 0 : -1}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 19V5m-6 6 6-6 6 6" />
+          </svg>
+        </button>
+      ) : null}
     </div>
   );
 }
