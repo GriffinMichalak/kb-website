@@ -66,8 +66,8 @@ export const PortfolioTab = ({
       {pageCount > 1 && (
         <Stack
           spacing={2}
-          alignItems="center"
           sx={{
+            alignItems: 'center',
             mt: 3,
             fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
           }}
