@@ -1,0 +1,36 @@
+.accordion {
+  border: 1px solid #e0e0e0;
+  border-radius: 1px;
+  background: #ffffff;
+  margin-bottom: 16px;
+}
+
+.accordion__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.accordion__chevron {
+  transition: transform 0.2s ease;
+  color: #888;
+}
+
+.accordion__chevron--open {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+  padding: 0 24px 20px;
+  color: #555;
+}
