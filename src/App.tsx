@@ -5,7 +5,7 @@ import { PortfolioTab } from './Tabs/PortfolioTab';
 import { ResumeTab } from './Tabs/ResumeTab';
 import { Header } from './Components/Header';
 import { PhotosTab } from './Tabs/PhotosTab';
-// import { SocialStrategyTab } from './Tabs/SocialStrategyTab';
+import { AudienceEngagementTab } from './Tabs/AudienceEngagementTab';
 
 const FF_PHOTOS_TAB: boolean = false;
 const FF_SCROLL_TOP_BTN: boolean = true;
@@ -17,7 +17,7 @@ function App() {
     Boolean
   );
   const [activeTab, setActiveTab] = useState('Clip Portfolio');
-  const tabNames = ['Clip Portfolio', 'Resume'];
+  const tabNames = ['Clip Portfolio', 'Resume', 'Audience Engagement'];
 
   if (FF_PHOTOS_TAB) {
     tabNames.push('Photos');
@@ -84,7 +84,7 @@ function App() {
           ) : null}
           {activeTab == 'Resume' ? <ResumeTab /> : null}
           {activeTab == 'Photos' && FF_PHOTOS_TAB ? <PhotosTab /> : null}
-          {/* {activeTab == 'Social Strategy' ? <SocialStrategyTab /> : null} */}
+          {activeTab == 'Audience Engagement' ? <AudienceEngagementTab /> : null}
         </div>
       </section>
 
