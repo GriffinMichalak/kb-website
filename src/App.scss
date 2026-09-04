@@ -114,7 +114,7 @@ html {
 
 .scroll-to-top {
   position: fixed;
-  right: max(1.5rem, calc((100vw - 960px) / 2));
+  right: max(1.5rem, calc((100vw - 960px) / 2 - 2.5rem));
   bottom: 1.5rem;
   z-index: 20;
   display: flex;
