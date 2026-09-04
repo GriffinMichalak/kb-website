@@ -10,6 +10,7 @@ import React from 'react';
 export const Header = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
+  const [photoLoaded, setPhotoLoaded] = useState(false);
   const COPY_TIMEOUT = 3000;
 
   const handleClose = (_event: React.SyntheticEvent | Event, reason?: SnackbarCloseReason) => {
@@ -48,7 +49,13 @@ export const Header = () => {
         action={action}
       />
       <div className="profile__photo">
-        <img src={pfp} alt="Profile" />
+        {!photoLoaded && <div className="skeleton profile__photo-skeleton" />}
+        <img
+          src={pfp}
+          alt="Profile"
+          onLoad={() => setPhotoLoaded(true)}
+          style={{ display: photoLoaded ? 'block' : 'none' }}
+        />
       </div>
       <div className="profile__info">
         <h1 className="profile__name">Kelly Broder</h1>

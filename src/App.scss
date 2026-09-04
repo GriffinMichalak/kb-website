@@ -53,6 +53,13 @@ html {
       object-fit: cover;
       display: block;
     }
+
+    &-skeleton {
+      margin-top: 0.45rem;
+      width: 200px;
+      height: 260px;
+      border-radius: 10px;
+    }
   }
 
   &__name {
