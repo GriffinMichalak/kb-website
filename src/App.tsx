@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import './App.scss';
-import { articles } from './articles';
+import { fetchArticles, type Article } from './articles';
 import { PortfolioTab } from './Tabs/PortfolioTab';
 import { ResumeTab } from './Tabs/ResumeTab';
 import { Header } from './Components/Header';
@@ -13,6 +13,15 @@ const FF_SCROLL_TOP_BTN: boolean = true;
 function App() {
   const [publication, setPublication] = useState('');
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [articlesLoading, setArticlesLoading] = useState(true);
+
+  useEffect(() => {
+    fetchArticles()
+      .then(setArticles)
+      .finally(() => setArticlesLoading(false));
+  }, []);
+
   const options = Array.from(new Set(articles.map((article) => article.publication))).filter(
     Boolean
   );
@@ -77,6 +86,7 @@ function App() {
           {activeTab == 'Clip Portfolio' ? (
             <PortfolioTab
               articles={articles}
+              loading={articlesLoading}
               publication={publication}
               setPublication={setPublication}
               options={options}

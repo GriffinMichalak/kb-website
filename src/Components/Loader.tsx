@@ -11,7 +11,7 @@ const Loader = ({ children, text, align }: LoaderProps) => {
   const [loaded, setLoaded] = useState(false);
 
   const loaderStyle: React.CSSProperties = {
-    display: 'flex',
+    display: text ? 'flex' : 'block',
     alignItems: align === 'top' ? 'flex-start' : 'center',
     justifyContent: 'center',
     position: 'absolute',
@@ -21,7 +21,12 @@ const Loader = ({ children, text, align }: LoaderProps) => {
 
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-      {!loaded && <div style={loaderStyle}>{text ? text : 'Loading...'}</div>}
+      {!loaded &&
+        (text ? (
+          <div style={loaderStyle}>{text}</div>
+        ) : (
+          <div className="skeleton" style={loaderStyle} />
+        ))}
       <div
         onLoad={() => setLoaded(true)}
         style={{
