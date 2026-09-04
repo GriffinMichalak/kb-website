@@ -1,14 +1,17 @@
 import { useState, useEffect, useMemo } from 'react';
 import '../App.scss';
 import Article from '../Components/Article';
+import ArticleSkeleton from '../Components/ArticleSkeleton';
 import { NativeDropdown } from '../Components/Dropdown';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
 const ARTICLES_PER_PAGE = 21;
+const SKELETON_COUNT = 9;
 
 type PortfolioTabProps = {
   articles: any;
+  loading?: boolean;
   publication: string;
   setPublication: any;
   options: string[];
@@ -16,6 +19,7 @@ type PortfolioTabProps = {
 
 export const PortfolioTab = ({
   articles,
+  loading,
   publication,
   setPublication,
   options
@@ -51,19 +55,21 @@ export const PortfolioTab = ({
     <div>
       <NativeDropdown publication={publication} setPublication={setPublication} options={options} />
       <div className="portfolio__grid">
-        {paginatedArticles.map((article: any) => (
-          <Article
-            key={article.link || article.headline}
-            image={article.image}
-            link={article.link}
-            headline={article.headline}
-            publication={article.publication}
-            excerpt={article.excerpt}
-            date={article.date}
-          />
-        ))}
+        {loading
+          ? Array.from({ length: SKELETON_COUNT }).map((_, i) => <ArticleSkeleton key={i} />)
+          : paginatedArticles.map((article: any) => (
+              <Article
+                key={article.link || article.headline}
+                image={article.image}
+                link={article.link}
+                headline={article.headline}
+                publication={article.publication}
+                excerpt={article.excerpt}
+                date={article.date}
+              />
+            ))}
       </div>
-      {pageCount > 1 && (
+      {!loading && pageCount > 1 && (
         <Stack
           spacing={2}
           alignItems="center"

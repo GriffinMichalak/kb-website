@@ -301,6 +301,62 @@ html {
   }
 }
 
+// ── Skeleton loaders ──
+
+@keyframes skeletonPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton {
+  display: block;
+  background-color: #e2e2e2;
+  border-radius: 3px;
+  animation: skeletonPulse 1.4s ease-in-out infinite;
+}
+
+.card--skeleton {
+  .card__image .skeleton {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .card__meta {
+    .skeleton--text {
+      height: 0.75rem;
+    }
+  }
+
+  .card__headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    padding: 5px 16px 5px 16px;
+
+    .skeleton--text {
+      height: 1rem;
+    }
+  }
+
+  .card__excerpt {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    .skeleton--text {
+      height: 0.7rem;
+    }
+  }
+}
+
 // ── Responsive ──
 
 @media (max-width: 720px) {
