@@ -5,23 +5,20 @@ export const AudienceEngagementTab = () => {
   return (
     <div className="resume-section">
       <div className="category">
-        <EditorialAccordion title="Social Media Reach" defaultOpen>
+        <EditorialAccordion title="World Cup Coverage" defaultOpen>
           Placeholder content for social media reach metrics.
         </EditorialAccordion>
-        <EditorialAccordion title="Newsletter Growth">
+        <EditorialAccordion title="SCOTUS Decisions">
           Placeholder content for newsletter subscriber growth.
         </EditorialAccordion>
-        <EditorialAccordion title="Comment & Community Feedback">
+        <EditorialAccordion title="Lindsay Clancy Trial">
           Placeholder content for community feedback highlights.
         </EditorialAccordion>
-        <EditorialAccordion title="Event Turnout">
+        <EditorialAccordion title="Performance Metrics">
           Placeholder content for event attendance and engagement.
         </EditorialAccordion>
-        <EditorialAccordion title="Video Watch Time">
+        <EditorialAccordion title="Social Strategy">
           Placeholder content for video watch-time analytics.
-        </EditorialAccordion>
-        <EditorialAccordion title="Audience Demographics">
-          Placeholder content for audience demographic breakdown.
         </EditorialAccordion>
       </div>
     </div>
