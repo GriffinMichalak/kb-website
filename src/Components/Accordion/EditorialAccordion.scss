@@ -1,0 +1,72 @@
+$fg: #1a1a1a;
+$fg-muted: #555;
+$border: #e0e0e0;
+$font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+
+.editorial-accordion {
+  border-bottom: 1px solid $border;
+
+  & + & {
+    margin-top: -1px;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: $fg;
+  }
+
+  &__chevron {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: $fg;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &--open &__chevron {
+    transform: rotate(180deg);
+  }
+
+  &__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &--open &__panel {
+    grid-template-rows: 1fr;
+  }
+
+  &__content {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  &__content-inner {
+    padding-bottom: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: $fg-muted;
+  }
+}
